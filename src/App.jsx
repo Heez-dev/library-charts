@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./reset.css";
 import Layout from "./layout/Layout";
 import Recharts from "./pages/Recharts";
 import ReactChartJs2 from "./pages/ReactChartJs2";
