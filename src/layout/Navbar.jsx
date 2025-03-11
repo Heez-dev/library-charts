@@ -35,12 +35,26 @@ import { Link, useLocation } from "react-router-dom";
  * ex: 결제하기 버튼을 누르고 나서 모든 결제가 완료된 후에 페이지를 이동시키는 경우
  */
 
+const PATH = {
+  HOME: "/",
+  reCharts: "/recharts",
+  reactChartJs2: "/react-chartjs-2",
+  reactApexCharts: "/react-apexcharts",
+  echartsForReact: "/echarts-for-react",
+};
+
 const Navbar = () => {
   const location = useLocation();
   console.log(location);
 
   const StyledLink = ({ children, to, ariaLabel }) => (
-    <Link to={to} aria-label={ariaLabel} className="whitespace-nowrap p-4">
+    <Link
+      to={to}
+      aria-label={ariaLabel}
+      className={`whitespace-nowrap p-2 ${
+        location.pathname === to ? "bg-neutral-100" : ""
+      }`}
+    >
       {children}
     </Link>
   );
@@ -49,13 +63,13 @@ const Navbar = () => {
     <nav role="navigation" aria-label="Main Navigation">
       <ul className="flex gap-10 items-end">
         <li>
-          <StyledLink to="/" aria-label="Go to Homepage">
+          <StyledLink to={PATH.HOME} aria-label="Go to Homepage">
             HOME
           </StyledLink>
         </li>
         <li>
           <StyledLink
-            to="/recharts"
+            to={PATH.reCharts}
             aria-label="View chart examples using Recharts"
           >
             recharts
@@ -63,7 +77,7 @@ const Navbar = () => {
         </li>
         <li>
           <StyledLink
-            to="/react-chartjs-2"
+            to={PATH.reactChartJs2}
             aria-label="View chart examples using react-chartjs-2"
           >
             react-chartjs-2
@@ -71,7 +85,7 @@ const Navbar = () => {
         </li>
         <li>
           <StyledLink
-            to="/react-apexcharts"
+            to={PATH.reactApexCharts}
             aria-label="View chart examples using react-apexcharts"
           >
             react-apexcharts
@@ -79,7 +93,7 @@ const Navbar = () => {
         </li>
         <li>
           <StyledLink
-            to="/echarts-for-react"
+            to={PATH.echartsForReact}
             aria-label="View chart examples using echarts-for-react"
           >
             echarts-for-react
