@@ -8,7 +8,7 @@ import Main from "./pages/Main";
 
 function App() {
   return (
-    <div className="p-10">
+    <div className="App p-10 overflow-auto h-screen">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Main />} />
